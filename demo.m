@@ -6,8 +6,8 @@ clc
 bin_size = 1;       % bin size: 1
 dt = 2e-6;          % sampling rate: 2 us
 
-load('Cy5.mat');
-data = f;
+load('Cy5_uint8.mat');
+data = double(f);
 % bin the photon count
 data = double(data(1:floor(length(data)/bin_size)*bin_size));      
 data = sum(reshape(data, bin_size, []), 1)';             
